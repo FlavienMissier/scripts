@@ -1,9 +1,16 @@
-if [ $# -lt 1 ]; then
-    echo "usage: $0 vim|grep|shell|c|c++|java|c#|rust [section] [keyword]"
+#!/bin/bash
+if [ $# -lt 1 -o $# -gt 2 ]; then
+    OPTIONS=`ls ~/scripts/dictionaries/`
+    echo -e "usage: $0\n$OPTIONS\n[keywords]"
     exit 0
 fi
 
-case
+if [ $# -eq 1 ]; then
+    cat ~/scripts/dictionaries/$1
+    exit 0
+fi
 
+if [ $# -eq 2 ]; then
+    grep $2 ~/scripts/dictionaries/$1 
+fi
 
-esac
