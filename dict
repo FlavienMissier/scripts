@@ -1,0 +1,9 @@
+if [ $# -lt 1 ]; then
+    echo "usage: $0 vim|grep|shell|c|c++|java|c#|rust [section] [keyword]"
+    exit 0
+fi
+
+case
+
+
+esac
