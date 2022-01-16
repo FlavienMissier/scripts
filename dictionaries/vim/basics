@@ -1,0 +1,22 @@
+*basics* *basic*
+y           yank (copy) *y* *yank* *copy* 
+yy          yank (copy) line same as Y *yy* *Y* 
+d           delete *d* *delete* *cut*
+dd          delete line *dd* *line*
+c           change (deletes then goes to insert mode) *c* *change* 
+cc          change line (deletes then goes to insert mode) *cc* 
+p           (put) paste after (paste below when pasting lines) *p* *paste* *put*
+P           (put) paste before (paste above when pasting lines) *P* 
+r           replace one character *r* *replace* 
+x           delete character *x* *delete* *character* *char*
+X           delete previous character *X* *previous*
+>           indent *>* *indent*
+>>          indent line *>>* *line*
+<           unindent *<* *unindent*
+<<          unindent line *<<* 
+J           join next line *J* *join* *line*
+K           go to manual entry for word *K* *manual* *entry*
+u           undo *u* *undo*
+U           undo changes to current line *U* 
+ctrl-r      redo *ctrl-r* *redo*
+.           repeat last change *.* *repeat*

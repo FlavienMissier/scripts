@@ -6,11 +6,12 @@ if [ $# -lt 1 -o $# -gt 2 ]; then
 fi
 
 if [ $# -eq 1 ]; then
-    cat ~/scripts/dictionaries/$1
+    cat ~/scripts/dictionaries/$1/basics | less
     exit 0
 fi
 
 if [ $# -eq 2 ]; then
-    grep $2 ~/scripts/dictionaries/$1 
+    # -h removes filenames from output, -A selcects number of lines to include as context in output
+    grep -h -A 20 \*$2\* ~/scripts/dictionaries/$1/* | less
 fi
 

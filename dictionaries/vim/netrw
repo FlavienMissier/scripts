@@ -1,0 +1,5 @@
+*explore* *file* *netrw* *create* *new*
+%                   create new file *%*
+:Sexplore
+:Texplore
+:explore

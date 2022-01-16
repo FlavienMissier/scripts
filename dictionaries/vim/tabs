@@ -1,0 +1,11 @@
+*tab* *tabs*
+gt            go to next tab *gt*
+gT            go to previous tab *gT*
+{i}gt         go to tab in position i
+:tabedit {file}   edit specified file in a new tab
+:tabnew {file}
+:tabfind {file}   open a new tab with filename given, searching the 'path' to find it
+:tabclose         close current tab
+:tabclose {i}     close i-th tab
+:tab split        copy the current window to a new tab of its own
+:Texplore         open netrw in new tab

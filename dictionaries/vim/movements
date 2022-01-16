@@ -1,0 +1,23 @@
+*movement* *move* *moves* *movements*
+e           move to end of word *e* *word*
+E           move to end of token *E* *token*
+b           move to begining of word *b*
+B           move to begining of token *B*
+w           move to start of word *w*
+W           move to start of token *W*
+^           move to start of line not including white space *^* *line*
+$           move to end of line *$*
+0           move to start of line including white space *0*
+gg          move to begining of file *gg* *file*
+G           move to end of file *G*
+*           move to next instance of word under cursor *** *word* *cursor*
+#           move to previous instance of word under cursor *#*
+(           move backward to previous sentence *(* *sentence*
+)           move forward to next sentence *)*
+{           move forward to next blank line *{* *blank line* *blank*
+}           move to previous blank line *}*
+[* or [/	go to [count] previous start of a C comment "/*". *[** *[/* *comment*
+]* or ]/	go to [count] next end of a C comment "*/". *]** *]/*
+[[          go to [count] next '{' *[[*
+]]          go to [count] next '}' *]]*
+gd          go to definition of word under the cursor *gd*

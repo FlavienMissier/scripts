@@ -1,0 +1,10 @@
+qx                  record macro at x *macro* *record*
+q                   stop recording macro
+@x                  run macro at x *run*
+"{a-zA-Z0-9.%#:-"}	use register {a-zA-Z0-9.%#:-"} for next delete, yank or put (use uppercase character to append with delete and yank) ({.%#:} only work with put) *"* *register*
+m{a-zA-Z0-9.%#:-"}  *m* *mark*
+`{a-zA-Z0-9.%#:-"}  *`*
+:set spell!         toggle spell checking *spell* *spelling* *checking* *suggestion* *suggest*
+z=                  give spelling suggestion if spell checking is active *z=*
+g8                  print hex value of bytes used in UTF-8 character under the cursor *g8* *utf* *utf-8* *character* *char*
+ga                  print ascii value of character under the cursor *ga* *ascii*
