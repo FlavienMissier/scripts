@@ -8,3 +8,10 @@ m{a-zA-Z0-9.%#:-"}  *m* *mark*
 z=                  give spelling suggestion if spell checking is active *z=*
 g8                  print hex value of bytes used in UTF-8 character under the cursor *g8* *utf* *utf-8* *character* *char*
 ga                  print ascii value of character under the cursor *ga* *ascii*
+:r !command         writes result of command to file *:r* *command*
+:r !ls
+:.!sh               writes result of executing current line
+:r !date
+ctrl-p              *autocomplete* current *word* *ctrl-n* also works *ctrl-p* *p* *n*
+ctrl-x              enters *completion* *mode* use when in insert mode
+ ctrl-l             *complete* *line* use when in completion mode

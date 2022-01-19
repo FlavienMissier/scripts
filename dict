@@ -11,7 +11,7 @@ if [ $# -eq 1 ]; then
 fi
 
 if [ $# -eq 2 ]; then
-    # -h removes filenames from output, -A selcects number of lines to include as context in output
+    # -h removes filenames from output, -A selects number of lines to include as context in output
     grep -h -A 20 \*$2\* ~/scripts/dictionaries/$1/* | less
 fi
 

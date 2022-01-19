@@ -1,5 +1,7 @@
-*explore* *file* *netrw* *create* *new*
+*explore* *ex* *file* *netrw* *create* *new* *Sex* *Vex* *Tex* *Ex*
 %                   create new file *%*
-:Sexplore
-:Texplore
+:Sex[plore]         opens in new horizontal window
+:Vex[plore]         opens in new vertical window
+:Tex[plore]         opens in new tab
 :explore
+:Ex

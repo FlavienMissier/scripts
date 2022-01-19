@@ -1,6 +1,7 @@
 *window* *split* *ctrl-W* *ctrl-w* *W*
-:[vert] new {file} *vertical*
+:[vert] new {file}           opens new vertical window *vertical*
+:e {file}                    opens file in current window *:e* *open* *file* *current*
 CTRL-W <Arrow-Key>           moves the cursor to another window in the direction of the arrow key
-CTRL-W K	Move the current window to be at the very top, using the full width of the screen.  This works like closing the current window and then creating another one with ":topleft split", except that the current window contents is used for the new
-CTRL-W H	Move the current window to be at the far left, using the full height of the screen.  This works like closing the current window and then creating another one with ":vert topleft split", except that the current window contents
-CTRL-W T	Move the current window to a new tab page.  This fails if there is only one window in the current tab page.  When a count is specified the new tab page will be opened before the tab page with this index.  Otherwise it comes after *tab*
+CTRL-W K	                 Move the current window to be at the very top, using the full width of the screen
+CTRL-W H	                 Move the current window to be at the far left, using the full height of the screen
+CTRL-W T	                 Move the current window to a new tab page

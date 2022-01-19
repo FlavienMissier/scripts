@@ -21,3 +21,4 @@ G           move to end of file *G*
 [[          go to [count] next '{' *[[*
 ]]          go to [count] next '}' *]]*
 gd          go to definition of word under the cursor *gd*
+'.          go to last modified line *'.*

@@ -1,0 +1,144 @@
+*basics*
+*statement* - action command in a procedural programming language; coded instruction usually ending with semicolon (;)
+*comments* – // comments out the rest of the line, /* … */ comments out everything between the /* and the */, even across lines
+*code block* / *block of code* / *compound statement* code placed between { }; all code in a code block is treated as one unit, i. e. controls scope
+*identifier* – final part of a name (a-zA-Z_)(a-zA-Z1-9_)* may consist of letters (case sensitive), digits, underscores and must start with a letter or underscore
+*keyword* – identifier that is part of the programming language; most are reserved and may not be redefined, some are contextual and can be redefined
+ 
+*variable* - instance of an intrinsic (also called predefined) type or reference to an object; storage 
+    location for values; values are copied by assignment; must be declared and initialized before use 
+    (definite assignment); declaration and assignment may be combined; variable variety include
+ i. Value variable – named variable created from an intrinsic type; the memory given to the 
+    variable contains the data of that type
+ ii. Reference variable – references an object; named variable created from a class or other custom 
+    type that can contain the address of an unnamed dynamic object created with the new operator
+ iii.Instance Object – object variable / variable object / instance variable; unnamed variable created 
+    dynamically from a class or other custom type with new operator; may be referenced by a 
+    reference variable
+ iv. Value type variables and Reference type variables are copied by the assignment operator (=) and 
+    when passed as an actual parameter (parameter in the call) to a formal parameter (parameter of a 
+    method or constructor)
+    A. All named variables are PASS-BY-VALUE BY DEFAULT; i. e. the value of the variable is copied 
+    B. Only the address of an instance object is copied by the assignment operator (=) or when 
+        passed as an actual parameter (parameter in the call) to a formal parameter (parameter of a 
+        method or constructor)
+
+*logical* *operator* *bitwise* *AND* *and* *&&* *&* *OR* *or* *||* *|* *NOT* *not* *!* *exclusive or* *XOR* *xor* *exclusive* *^*
+ &&     conditional AND
+ &      bitwise (logical) AND
+ ||     conditional OR
+ |      bitwise (logical) OR
+ !      NOT
+ ^      exclusive or, XOR
+
+Console.WriteLine("Hello, World!"); *console* *Console* *output* *writeline* *WriteLine* *Console.WriteLine* *System.Console.WriteLine()* *print* *stdout*
+string input = System.Console.ReadLine(); *readline* *ReadLine* *input* *stdin* *Console.ReadLine* *System.Console.ReadLine()*
+int i = Int32.Parse(str); *parse* *convert*
+
+*string* *interpolation* *$*
+Console.WriteLine($"Hello, {name}");
+Console.WriteLine("Hello, {1}", name);
+
+checked – throws an exception rather than overflow; examples: *checked* *unchecked* *overflow*
+    int x = checked (y * z);
+    checked
+    {
+        x = y * z;
+    }
+
+unchecked – disables checking for overflow; examples:
+    int x = unchecked (y * z);
+    unchecked
+    {
+        x = y * z;
+    }
+
+escape characters: 
+\’, \”, \\, \0, \a, \b, \f, \n, \r, \t, \v
+
+*ternary* (*conditional*) *operator* - *?* *:*
+boolean-expression ? expression1 : expression2;
+string c =  a ? "a is true" : "a is false";
+
+*if* *else*
+if (boolean-expression){ 
+    statement1;
+} else {
+    statement2;
+}
+
+*while* *loop* *do* *for* *foreach*
+while (boolean-expression){
+    statement;
+}
+
+do{
+    statement;
+} while (boolean-expression);
+
+for ([initializer][,initializer]; [boolean-expression]; [iterator][, iterator]){
+    statement
+}
+for (int i=0; i<=10; i++){
+    Console.WriteLine(i);
+}
+
+foreach (element-type var in collection){
+    statement
+}
+foreach(var element in collection){
+    Console.WriteLine(element);
+}
+
+
+*signed* *types* *variable*
+C#              .NET            Description
+*short*         *Init16*        -32,768 to 32,767
+*int*           *Int32*         -2,147,483,648 to 2,147,483,647
+*long*          *Int64*         -9.223372037x1018 to -9.223372037x1018-1
+*float*         *Single*        small approx. floating point
+*double*        *Double*        large approx. floating point
+*decimal*       *Decimal*       precise floating point
+*char*          *Char*          *unicode* (65,000+)
+*bool*          *Boolean*       True or False
+*string*        *String*        sequence of characters
+
+*unsigned*
+C#              .NET            Description
+*byte*          *Byte*          0 to 255
+*ushort*        *UInt16*        0 to 65535
+*uint*          *UInt32*        0 to 4,294,967,295
+*ulong*         *UInt64*        0 to 1.844674407x1019
+
+*const*         makes variable constant *immutable*
+*var*           infers data type
+
+switch (expression) // *switch* *case* *break* *default*
+{
+  [case constant-expression:
+    [statement]
+    break; | goto case case;]
+  default: 
+    [statement]
+    break; | goto case case;]
+}
+// default case is optional
+// C# allows switch on a string expression,
+
+*?* *nullable*
+
+*nameof*
+string person = "Bob";
+string variable = nameof(person); //variable contains "person"
+
+*default*
+default(int); default(DateTime); default(string);
+
+*try* *catch* *exception*
+try{
+
+}catch (Exception e){ //(Exception e) can be ommited but it is not recommended
+
+}
+
+
