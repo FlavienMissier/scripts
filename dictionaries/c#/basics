@@ -141,4 +141,12 @@ try{
 
 }
 
+*exit* *environment*
+Environment.Exit(0); //exits program
 
+Random r = new Random(seed); //*random* *next* the optional seed argument sets the seed for the algorithm to get predicatable random numbers the default seed is based on the system clock
+r.Next()            positive random integer within the default range -2,147,483,648 to 2,147,483, 647.
+r.Next(int)         positive random integer that is less than the specified maximum value.
+r.Next(int, int)    positive random integer within the specified minimum and maximum range (includes min and excludes max).
+r.NextDouble()      random floating-point number that is greater than or equal to 0.0 and less than 1.0.
+r.NextByte()        fills the specified array with the random bytes.

@@ -1,24 +1,38 @@
-*movement* *move* *moves* *movements*
-e           move to end of word *e* *word*
-E           move to end of token *E* *token*
-b           move to begining of word *b*
-B           move to begining of token *B*
-w           move to start of word *w*
-W           move to start of token *W*
-^           move to start of line not including white space *^* *line*
-$           move to end of line *$*
-0           move to start of line including white space *0*
-gg          move to begining of file *gg* *file*
-G           move to end of file *G*
-*           move to next instance of word under cursor *** *word* *cursor*
-#           move to previous instance of word under cursor *#*
-(           move backward to previous sentence *(* *sentence*
-)           move forward to next sentence *)*
-{           move forward to next blank line *{* *blank line* *blank*
-}           move to previous blank line *}*
+*movement* *move* *moves* *movements* *go* *go to*
+e           go to end of word *e* *word*
+E           go to end of token *E* *token*
+b           go to begining of word *b*
+B           go to begining of token *B*
+w           go to start of word *w*
+W           go to start of token *W*
+^           go to start of line not including white space *^* *line*
+$           go to end of line *$*
+0           go to start of line including white space *0*
+gg          go to begining of file *gg* *file*
+G           go to end of file *G*
+f           go forward to given char *f*
+F           go backward to given char *F*
+t           go forward to before given char *t*
+T           go backward to before given char (technicaly after when reading right to left) *T*
+;           repeat search forward *;*
+,           repeat search backward *,*
+i           use with one of the following to select everything inside (, {, [, ", ', p (for paragraph), s (for sentence) *i*
+a           use with one of the following to select everything inside including surrounding chars (, {, [, ", ', p (for paragraph), s (for sentence) *a*
+l           selects letter under cursor
+*           go to next instance of word under cursor *** *word* *cursor*
+#           go to previous instance of word under cursor *#*
+(           go backward to previous sentence *(* *sentence*
+)           go forward to next sentence *)*
+{           go forward to next blank line *{* *blank line* *blank*
+}           go to previous blank line *}*
 [* or [/	go to [count] previous start of a C comment "/*". *[** *[/* *comment*
 ]* or ]/	go to [count] next end of a C comment "*/". *]** *]/*
 [[          go to [count] next '{' *[[*
 ]]          go to [count] next '}' *]]*
 gd          go to definition of word under the cursor *gd*
+m{a-zA-Z0-9.%#:-"}  set mark at cursor, capital marks work accross fiels *m* *mark*
+`{a-zA-Z0-9.%#:-"}  go to start of line with mark *`*
 '.          go to last modified line *'.*
+''          go to last jump location *''*
+ctrl-o      go to cursor location before last jump *o* *ctrl-o*
+ctrl-i      go to cursor location after last jump *i* *ctrl-i*

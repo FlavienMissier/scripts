@@ -1,0 +1,13 @@
+*basics* *branch* *commit* *push* *checkout*
+git add .               adds changes to the next commit, stages changes
+git commit -m ""        creates a commit with the current staged changes
+git push [-f]           push local changes to remote
+git checkout            change current branch
+git branch              list branches
+git branch <name>       creates a new branch
+git push -u origin branchname
+git restore <path/file> removes non-commited changes
+git stash
+
+git revert <commit>     *revert* a commit by creating changes that revert that commit
+git reset               *reset* a branch to a previous commit, this changes the commit history

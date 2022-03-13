@@ -1,0 +1,17 @@
+*class* *classes*
+
+*public*            accessible to any method of any class; default for members of enums or interfaces
+
+*internal*          accessible to classes and methods of classes in the assembly (i. e. code that is to be 
+                    compiled into a .exe of .dll file); default access for non-nested types in a namespace
+
+*private*           accessible only within the containing class; not inheritable; default for a class or struct members
+
+*protected*         accessible only within the containing class and classes derived from the containing class; inheritable private
+
+protected *internal*  union of protected and internal, more permissible than either; accessible within 
+                    the containing type, sub-type, assembly or friend assemblies (think of it as protected OR internal)
+
+private protected   intersection of protected and internal; accessible only within the class or 
+                    subclasses in the same assembly
+

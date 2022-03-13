@@ -20,3 +20,5 @@ u           undo *u* *undo*
 U           undo changes to current line *U* 
 ctrl-r      redo *ctrl-r* *redo*
 .           repeat last change *.* *repeat*
+ctrl-a      increment number
+ctrl-x      decrement number

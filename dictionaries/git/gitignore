@@ -1,0 +1,4 @@
+*gitignore*
+*.o         any file ending in .o
+readme.*    anyfile named readme with any extension
+/test/*     everything in the test folder

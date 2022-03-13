@@ -1,5 +1,36 @@
+*basics**basic*
+*preprocessor* *directives* *#include* *include*
+// include replaces the directive with the entire contents of the file
+#include <iostream> //includes library
+#include "main.h" // quotes first searches current directory
+
+// *define* *#define* *undef* *#undefine* *macro*
+#define PI 3.14159265
+#define max(a, b)  (((a) > (b)) ? (a) : (b))
+#define getrandom(min, max) \
+    ((rand()%(int)(((max) + 1)-(min)))+ (min)) 
+
+
+//the undef directive removes the definition of a macro
+#undef 
+
 *for loop* *for* *loop*
 // for loop counting from 0 to 10
 for(int i=0; i>=10; i++){
     std::cout<<i<<"\n";
 }
+
+*pointer* *pointers* *&* ***
+int* p;     // initializing an int pointer (it can contain an address that points to an integer and has type int*)
+int a = 5;  
+p = &a;     // using the address-of operator to get a's address and have p point to it
+*p = 10;    // using the dereference operator to access the value that p is pointing to (after this line a == 10 is true)
+*p++        // same as *(p++): increment pointer, and dereference unincremented address
+*++p        // same as *(++p): increment pointer, and dereference incremented address
+++*p        // same as ++(*p): dereference pointer, and increment the value it points to
+(*p)++      // dereference pointer, and post-increment the value it points to 
+const int* p        // qualifying the value being pointed to as const allows the pointer to read it but not modify it
+int* const p        // const pointer
+sizeof(var)         // gives the size in memory of variable can be used to compare size with datatypes and determine what type a void pointer is pointing to ex: (sizeof(int)) *sizeof*
+int *p = nullptr;   // *nullptr* *null*
+int (*funcpointer)(int,int) = function; //pointers can point to functions
