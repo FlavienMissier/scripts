@@ -1,0 +1,2 @@
+.		matches any character
+*		matches 0 or more times
