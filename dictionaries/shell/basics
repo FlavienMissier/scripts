@@ -1,3 +1,4 @@
+*basics*
 echo "VAR is equal to $VAR"
 cat
 tac
