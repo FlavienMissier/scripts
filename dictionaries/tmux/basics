@@ -1,0 +1,15 @@
+*basics*
+all commands start with ctrl+b
+c           *create* new *window*
+0-9         *move* to window number
+n           *next* window
+p           *previous* window
+w           list windows
+s           list sessions
+d           *detach* *session*
+tmux new -s <session-name>              create session
+tmux attach-session -t <session-name>   *attach* session
+tmux ls     list sessions
+"           *split* current pane horizontally
+%           *split* current pane vertically
+arrow-key   *move* to different pane
