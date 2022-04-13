@@ -2,3 +2,5 @@
 tar -xf archive.tar.gz
 *-x* *--extract*    extract file
 *-f*                file to use
+
+export PATH=$PATH:/home/folder/        append to *path*
