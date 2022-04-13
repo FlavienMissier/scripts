@@ -1,0 +1,11 @@
+*shell*
+echo "VAR is equal to $VAR"     *echo*
+cat                             *cat*
+tac                             *tac*
+mkdir                           *mkdir*
+rm                              *rm*
+ls                              *ls*
+cd                              *cd*
+awk                             *awk*
+sed                             *sed*
+ln <file_to_link> <link>                        create hard *link*, -s for *symbolic* link *ln*
