@@ -13,3 +13,4 @@ tmux ls     list sessions
 "           *split* current pane horizontally
 %           *split* current pane vertically
 arrow-key   *move* to different pane
+x           *close* current pane
