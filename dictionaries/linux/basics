@@ -1,3 +1,4 @@
+*basics*
 *tar* *gzip* *tar.gz* *extract* *zip* *archive*
 tar -xf archive.tar.gz
 *-x* *--extract*    extract file
