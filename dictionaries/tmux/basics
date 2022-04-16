@@ -14,3 +14,6 @@ tmux ls     list sessions
 %           *split* current pane vertically
 arrow-key   *move* to different pane
 x           *close* current pane
+
+~./tmux.conf
+set -g default-terminal "screen-256color"

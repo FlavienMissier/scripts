@@ -1,11 +1,83 @@
 *shell*
-echo "VAR is equal to $VAR"     *echo*
-cat                             *cat*
-tac                             *tac*
-mkdir                           *mkdir*
-rm                              *rm*
-ls                              *ls*
-cd                              *cd*
-awk                             *awk*
-sed                             *sed*
+#!/bin/bash
+# This is a commment
+VAR="variable names are uppercase by convention"
+# Dont put spaces before or after '=' when initializing a variable
+echo $VAR
+echo "Process Id (PID) of current shell: $$"
+echo "Filename of current script: $0"
+echo "Exit status of the last executed command: $?"
+echo "List of arguments the script was invoked with:"
+# $# is the number of arguments given to the script
+# $* is all the arguments given to the script
+# For loops are foreach loops, use while/until loops otherwise
+for TOKEN in $*
+do
+    echo "$TOKEN"
+done
+
+# arrays:
+# MYARRAY[0] = ""
+# all values in an array ${MYARRAY[*]}
+# size of an array ${#MYARRAY[@]}
+
+# Put spaces between operators and operands
+# Anything in backticks is executed as a command
+echo "\`expr 1 + 2\` = `expr 1 + 2`"
+
+if [ $1 -lt 3 ]
+then
+    echo "argument1 -lt 3"
+elif [ $1 == 3 ]
+then 
+    echo "argument1 == 3"
+elif [ $1 -gt 3 ]
+then
+    echo "argument1 -gt 3"
+fi
+# Relational operators: -eq, -ne, -gt, -lt, -ge, -le
+# Must be placed in brackets with space between brackets and operands
+# Boolean operators !, -o, -a
+# Must be placed in brackets with space between brackets and operands
+
+# break and continue are available
+NUM=0
+while [ $NUM -le 10 ]
+do
+    echo $NUM
+    NUM=`expr $NUM + 1`
+done
+<command1> | <command2>         transfers STDOUT of command1 to STDIN command2
+<command> > <file>              output to a file and overwrite
+<command> >> <file>             append to a file
+echo "VAR is equal to $VAR"                     *echo*
+    -e allows escape characters
+    echo -e '\033[1;37mWHITE'
+    echo -e '\033[0;30mBLACK'
+    echo -e '\033[0;31mRED'
+    echo -e '\033[0;34mBLUE'
+    echo -e '\033[0;32mGREEN'
+cat                                             *cat*
+tac                                             *tac*
+mkdir                                           *mkdir*
+    -p make parent directories as needed
+rm                                              *rm*
+    -r recursive -f force
+ls                                              *ls* 
+    -a list all entries including those starting by .
+    -l long list format (more info)
+    -t sort by latest modification
+    -s sort by largest file size
+    -X sort by file extension
+    -d list directories only
+    -h human readable format for -s and -l file size
+    -r reverse sorting order
+awk                                             *awk*
+    <command> | awk 'OFS=", " {print $1,$2}'    print first and second word of each line $0 is the whole line, $NF is number of fields (last field), OFS sets the output field separator
+    awk -F\n <file>                             -F sets the separator
+    awk '/^UUID/ {print $0}' /etc/fstab         using regular expressions
+    awk -F: 'BEGIN {print "User Accounts\n"} $3 >= 1000 {print $1,$6}' /etc/passwd          using condition and BEGIN
+sed                                             *sed*
 ln <file_to_link> <link>                        create hard *link*, -s for *symbolic* link *ln*
+find <path> -name *.c -exec <command> {} \;     *find*
+watch                                           *watch* -d highlights differences -n is interval in seconds
