@@ -10,6 +10,9 @@ git merge <branch/commit>       *merge* changes from commit or branch into curre
 git restore <path/file>         *removes* non-commited changes. *restore*
 git stash                       *stash* changes
 git log                         *list* commits *log*
+git diff <commit/branch>        *diff* shows differences
+    git diff --no-index --color-words --unified=0 Chapter2.txt EditedChapter2.txt
+    Uing diff for files instead of git commits, --unified number of context lines
 
 git revert <commit>             *revert* a commit by creating changes that revert that commit
 git reset                       *reset* a branch to a previous commit, this changes the commit history

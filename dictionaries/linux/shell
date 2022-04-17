@@ -1,8 +1,7 @@
 *shell*
 #!/bin/bash
 # This is a commment
-VAR="variable names are uppercase by convention"
-# Dont put spaces before or after '=' when initializing a variable
+VAR="variable names are uppercase by convention" # Dont put spaces before or after '=' when initializing a variable
 echo $VAR
 echo "Process Id (PID) of current shell: $$"
 echo "Filename of current script: $0"
@@ -15,16 +14,13 @@ for TOKEN in $*
 do
     echo "$TOKEN"
 done
-
 # arrays:
 # MYARRAY[0] = ""
 # all values in an array ${MYARRAY[*]}
 # size of an array ${#MYARRAY[@]}
-
 # Put spaces between operators and operands
 # Anything in backticks is executed as a command
 echo "\`expr 1 + 2\` = `expr 1 + 2`"
-
 if [ $1 -lt 3 ]
 then
     echo "argument1 -lt 3"
@@ -36,10 +32,8 @@ then
     echo "argument1 -gt 3"
 fi
 # Relational operators: -eq, -ne, -gt, -lt, -ge, -le
-# Must be placed in brackets with space between brackets and operands
 # Boolean operators !, -o, -a
-# Must be placed in brackets with space between brackets and operands
-
+# Operators must be placed in brackets with space between brackets and operands
 # break and continue are available
 NUM=0
 while [ $NUM -le 10 ]
@@ -47,8 +41,8 @@ do
     echo $NUM
     NUM=`expr $NUM + 1`
 done
-<command1> | <command2>         transfers STDOUT of command1 to STDIN command2
-<command> > <file>              output to a file and overwrite
+<command1> | <command2>         transfers STDOUT of command1 to STDIN of command2 *|* *pipe*
+<command> > <file>              output to a file and overwrite *>* *>>*
 <command> >> <file>             append to a file
 echo "VAR is equal to $VAR"                     *echo*
     -e allows escape characters
@@ -57,12 +51,13 @@ echo "VAR is equal to $VAR"                     *echo*
     echo -e '\033[0;31mRED'
     echo -e '\033[0;34mBLUE'
     echo -e '\033[0;32mGREEN'
-cat                                             *cat*
-tac                                             *tac*
+cat                                             *cat* output file contents -n for line numbers
+tac                                             *tac* output file contents in reverse
 mkdir                                           *mkdir*
     -p make parent directories as needed
 rm                                              *rm*
-    -r recursive -f force
+    -r recursive -f force -i prompt before each removal
+shred                                           *shred* shreds a file so that it is very hard to recover
 ls                                              *ls* 
     -a list all entries including those starting by .
     -l long list format (more info)
@@ -72,12 +67,20 @@ ls                                              *ls*
     -d list directories only
     -h human readable format for -s and -l file size
     -r reverse sorting order
-awk                                             *awk*
+awk                                             *awk* loops through all lines of input
     <command> | awk 'OFS=", " {print $1,$2}'    print first and second word of each line $0 is the whole line, $NF is number of fields (last field), OFS sets the output field separator
     awk -F\n <file>                             -F sets the separator
     awk '/^UUID/ {print $0}' /etc/fstab         using regular expressions
-    awk -F: 'BEGIN {print "User Accounts\n"} $3 >= 1000 {print $1,$6}' /etc/passwd          using condition and BEGIN
+    awk -F: 'BEGIN {print "User Accounts\n"; n=0} $1 == "flavien" {print $1,$6; n++} $3 >= 1000 && $1 != "flavien" {print $1; n++} END {print "total: " n "\n"}' /etc/passwd
+    BEGIN and END print things before and after looping, different conditions are used to print lines differently, variables can be used
+    supports standard programming language features such as printf, if, while, tolower, cos, sqrt, a ? b : c  and many more
 sed                                             *sed*
+    echo inputstring | sed 's/string/replacement/'      s/ replaces a string
+    sed -n -e '1,8p' -e '10-12p' <file>                 select lines 1-8 and 10-12, p is for print, -n prints only selected lines
+    sed -n '1~3p' <file>                                print every 3rd line after the first line
+    sed -n '/^if/p' <file>                              regular expressions
+    sed -n 's/old/new/gip' <file>                       g for global (match more than once per line), i for case sensitive
+    sed '/patterm/a text: &' <file>                     a inserts new line beneath pattern, i inserts above, & is the matched text
 ln <file_to_link> <link>                        create hard *link*, -s for *symbolic* link *ln*
 find <path> -name *.c -exec <command> {} \;     *find*
-watch                                           *watch* -d highlights differences -n is interval in seconds
+watch <command>                                 *watch* -d highlights differences -n is interval in seconds
