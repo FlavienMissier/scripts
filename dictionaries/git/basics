@@ -8,7 +8,9 @@ git branch <name>               *create* a new branch
 git push -u origin branchname
 git merge <branch/commit>       *merge* changes from commit or branch into current branch
 git restore <path/file>         *removes* non-commited changes. *restore*
-git stash                       *stash* changes
+git stash                       *stash* changes -u stashes untracked changes
+	git stash list 		list stashes
+	git stash show		show latest stash changes
 git log                         *list* commits *log*
 git diff <commit/branch>        *diff* shows differences
     git diff --no-index --color-words --unified=0 Chapter2.txt EditedChapter2.txt
