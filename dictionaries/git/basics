@@ -16,3 +16,4 @@ git diff <commit/branch>        *diff* shows differences
 
 git revert <commit>             *revert* a commit by creating changes that revert that commit
 git reset                       *reset* a branch to a previous commit, this changes the commit history
+    git reset --hard            reset to HEAD, removes all staged and unstaged changes?
