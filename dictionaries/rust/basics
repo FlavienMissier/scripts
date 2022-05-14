@@ -1,1 +1,44 @@
 *basics*
+
+let mut s = String::new();                      *let* *mut* *string* create a new mutable variable initialized to an empty string
+const CONSTANT_VARIABLE: u32 = 5;               *const* constants cannot be set to a value that must be computed at runtime
+println!("You guessed: {}", guess);             *print* *println!*
+
+std::io::stdin().read_line(&mut guess).expect("Failed to read line"); *read* *input*
+
+rand::thread_rng().gen_range(1..101);   *rand* *range* random value 1-100, use 1..=101 to include 101
+
+loop { }                                *loop*
+
+match value {                           *match*
+    value1 => action,
+    value2 => action,
+}
+
+*integer* types
+i8      u8
+i16     u16
+i32     u32
+i64     u64
+i128    u128
+isize   usize   based on architecture size
+
+*float* types
+f32
+f64
+
+*tuple*
+let tup = (500, 6.4, 1);
+let (x, y, z) = tup;        //getting values
+let five_hundred = x.0;     //getting first value
+
+*array*
+let a [i32; 5] = [1, 2, 3, 4, 5];    //fixed in size and allocated on the stack, specifying type and length is optional
+let a = [3; 5];                      //initializing an array of length 5 containg 3s
+
+*fn* *function*
+fn add_two(input: i32) -> i32 {     // -> i32 sets return type
+    input + 2                       // statements end with ; expressions don't, this returns a value
+}
+
+let number = if condition { 5 } else { 6 };     // works
