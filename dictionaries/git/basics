@@ -11,11 +11,11 @@ git restore <path/file>         *removes* non-commited changes. *restore*
 git stash                       *stash* changes -u stashes untracked changes
 	git stash list 		list stashes
 	git stash show		show latest stash changes
-git log                         *list* commits *log*
+git log --graph                 *list* commits *log*, --graph shows a *graph*
 git diff <commit/branch>        *diff* shows differences
     git diff --no-index --color-words --unified=0 Chapter2.txt EditedChapter2.txt
     Uing diff for files instead of git commits, --unified number of context lines
 
 git revert <commit>             *revert* a commit by creating changes that revert that commit
 git reset                       *reset* a branch to a previous commit, this changes the commit history
-    git reset --hard            reset to HEAD, removes all staged and unstaged changes?
+    git reset --hard            *hard* reset to HEAD, removes all staged and unstaged changes?
