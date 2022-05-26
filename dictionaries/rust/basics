@@ -127,5 +127,19 @@ impl Rectangle {
     }
 }
 
+*enum*
+enum IpAddrKind {
+    V4,
+    V6,
+}
+let four = IpAddrKind::V4;
+
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+let home = IpAddrKind::V4(127, 0, 0, 1);
+let loopback = IpAddr::V6(String::from("::1"));
+
 *debug*
 dbg!(&object); // prints object and code line (takes ownership)
