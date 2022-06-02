@@ -54,9 +54,31 @@ let result = loop {
     }
 }
 
+*option* *some* *none*
+let some_number = Some(5);
+let absent_number: Options<i32> = None; //type must be specified because it cannot be guessed at compile time
+
+// all possible values must be matched
 match value {                           *match*
-    value1 => action,
-    value2 => action,
+    value1  => action,
+    value2  => action,
+    _       => (), //for any other value do nothing, _ means we are not using the value
+}
+
+match value {
+    value1  => action,
+    other   => some_function(other), //for any other value call  some function
+}
+
+match value {
+    Some(i) => Some(i + 1)
+    None    => None, //return None if value was None
+}
+
+*if let*
+let config_max = Some(3u8)
+if let Some(max) = config_max {
+    println!("{}", max);
 }
 
 *integer* types
