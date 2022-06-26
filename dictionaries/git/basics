@@ -7,6 +7,7 @@ git branch                      list branches
 git branch <name>               *create* a new branch
 git push -u origin branchname
 git merge <branch/commit>       *merge* changes from commit or branch into current branch
+git rebase <branch/commit>      *rebase* the branch history to include the changes from the 
 git restore <path/file>         *removes* non-commited changes. *restore*
 git stash                       *stash* changes -u stashes untracked changes
 	git stash list 		list stashes
