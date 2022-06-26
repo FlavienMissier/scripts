@@ -12,6 +12,8 @@ q                   stop recording macro
     " last used register
 
 :set spell!         toggle spell checking *spell* *spelling* *checking* *suggestion* *suggest*
+:set encoding=utf-8 allows *special characters* *encoding* *utf-8*  *utf8*
+ctrl-k              in insert mode allows for accents using a' -> á make sure encoding=utf-8 is set *ctrl-k* *k*
 z=                  give spelling suggestion if spell checking is active *z=*
 g8                  print hex value of bytes used in UTF-8 character under the cursor *g8* *utf* *utf-8* *character* *char*
 ga                  print ascii value of character under the cursor *ga* *ascii*
