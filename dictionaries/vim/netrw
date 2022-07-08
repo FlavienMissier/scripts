@@ -5,3 +5,4 @@
 :Tex[plore]         opens in new tab
 :explore
 :Ex
+ctrl+^              returns to explorer after opening a file

@@ -27,3 +27,4 @@ ga                  print ascii value of character under the cursor *ga* *ascii*
 ctrl-p              *autocomplete* current *word* *ctrl-n* also works *ctrl-p* *p* *n*
 ctrl-x              enters *completion* *mode* use when in insert mode
  ctrl-l             *complete* *line* use when in completion mode
+:sort               *sort* selected text (works with lines may have other uses)

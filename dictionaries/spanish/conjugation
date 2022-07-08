@@ -3,7 +3,7 @@ Présente Indicativo
                 AR      ER      IR      
 yo              o       o       o       
 tú              as      es      es      
-él/ella         a       e       e       
+él/ella/usted   a       e       e       
 nosotros        amos    emos    imos    
 vosotros        áis     éis     ís     
 ellos/ellas     an      en      en      
@@ -17,6 +17,31 @@ nosotros        ábamos  íamos
 vosotros        abais   íais
 ellos/ellas     aban    ían
 
+Irregulars
+Ir
+iba
+ibas
+iba
+ibamos
+ibais
+iban
+
+Ver
+veía
+veías
+veía
+veíamos
+veíais
+veían
+
+Ser
+era
+eras
+era
+éramos
+erais
+eran
+
 Préterito
                 AR      ER/IR
 yo              é       í
@@ -27,26 +52,169 @@ vosotros        ais     eis
 ellos/ellas     aron    ieron
 
 Irregular
-Ser/IR       Dar     Poner
-fui
+Andar
+anduve
+anduviste
+anduvo
+anduvimos
+aduvisteis
+aduvieron
+
+Conducir     
+conduje
+condujiste
+condujo
+condujimos
+condujisteis
+condujeron      // eron instead of ieron
+
+Dar
+di
+diste
+dio
+dimos
+disteis
+dieron
+
+Decir
+dije
+dijiste
+dijo
+dijimos
+dijisteis
+dijeron     // eron instead ieron
+
+Estar
+estuve
+estuviste
+estuvo
+estuvimos
+estuvisteis
+estuvieron
+
+Haber
+hube
+hubiste
+hubo        // z instead of c
+hubimos
+hubisteis
+hubieron
+
+Hacer
+hice
+hiciste
+hizo        // z instead of c
+hicimos
+hicisteis
+hicieron
+
+Poner
+puse
+pusiste
+puso
+pusimos
+pusisteis
+pusieron
+
+Poder
+pude
+pudiste
+pudo
+pudimos
+pudisteis
+pudieron
+
+Querer
+quise
+quisiste
+quiso
+quisimos
+quisisteis
+quisieron
+
+Saber            
+supe
+supiste
+supo
+supimos
+supisteis
+supieron
+
+Ser/IR           
+fui              
 fuiste
 fue
 fuimos
-
+fuisteis
 fueron
+
+Tener
+tuve
+tuviste
+tuvo
+tuvimos
+tuvisteis
+tuvieron
+
+Traer
+traje
+trajiste
+trajo
+trajimos
+trajisteis
+trajeron        // eron instead of ieron
+
+Venir
+vinee
+viniste
+vino
+vinimos
+vinisteis
+vinieron
+
+Ver
+vi
+viste
+vio
+vimos
+visteis
+vieron
+
+Caer
+caí
+caíste
+cayó
+caímos
+caísteis
+cayeron
+
+Oír
+oí
+oíste
+oyó
+oímos
+oísteis
+oyeron
 
 Futuro
 Infinitovo + 
-IR
-é
-ás
-á
-emos
-eis
-án
+yo              é
+tú              ás
+él/ella/usted   á
+nosotros        emos
+vosotros        eis
+ellos/ellas     án
 
 Irregular
-Tener -> Tendré
+decir   -> diré
+haber   -> habré
+hacer   -> haré
+poder   -> pondré
+poner   -> pondré
+querer  -> queré
+saber   -> salré
+salir   -> saldré
+tener   -> tendré
 
 Conditional
 ía
@@ -82,5 +250,33 @@ Nosotros    emos    amos
 Vosotros
 Ustedes     en      an
 
-diphtongue:
-dormir -> duermo
+Stem change - Diphtongue:
+Applies to indicative present and subjunctive present for 1st, 2nd, 3rd person singular and 3rd person plural (all except nosotros and vosotros)
+o -> ue
+acostarse
+almorzar
+contar
+dormir
+mover
+poder
+recordarse
+soler
+soñar
+volver
+
+e -> ie
+cerrar
+commenzar
+despertarse
+encender
+merendar
+pensar
+querer
+sentarse
+sentir
+
+u -> ue
+jugar
+
+Estar
+estar is never followed by a noun

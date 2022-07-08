@@ -3,13 +3,17 @@ y           yank (copy) *y* *yank* *copy*
 yy          yank (copy) line same as Y *yy* *Y* 
 d           delete *d* *delete* *cut*
 dd          delete line *dd* *line*
+D           delete line until the end (same as d$) *D*
 c           change (deletes then goes to insert mode) *c* *change* 
 cc          change line (deletes then goes to insert mode) *cc* 
+C           change line until the end (same as c$) *C*
 p           (put) paste after (paste below when pasting lines) *p* *paste* *put*
 P           (put) paste before (paste above when pasting lines) *P* 
 r           replace one character *r* *replace* 
 x           delete character *x* *delete* *character* *char*
 X           delete previous character *X* *previous*
+s           delete charact6er and go into insert mode
+S           delete line and go into insert mode
 >           indent *>* *indent*
 >>          indent line *>>* *line*
 <           unindent *<* *unindent*
@@ -20,5 +24,5 @@ u           undo *u* *undo*
 U           undo changes to current line *U* 
 ctrl-r      redo *ctrl-r* *redo*
 .           repeat last change *.* *repeat*
-ctrl-a      increment number
-ctrl-x      decrement number
+ctrl-a      *increment* first number found on line
+ctrl-x      *decrement* first number found on line
