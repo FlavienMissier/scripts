@@ -44,7 +44,28 @@ done
 <command1> | <command2>         transfers STDOUT of command1 to STDIN of command2 *|* *pipe*
 <command> > <file>              output to a file and overwrite *>* *>>*
 <command> >> <file>             append to a file
-echo "VAR is equal to $VAR"                     *echo*
+
+Shortcuts:
+ctrl + l                                        *clear* terminal
+ctrl + z                                        puts running program in the background use fg to bring it back
+ctrl + a                                        brings cursor to begining of prompt
+ctrl + e                                        brings cursor to end of prompt
+ctrl + u                                        cut everything before the cursor
+ctrl + k                                        cut to end of line
+ctrl + w                                        delete word before cursor (space delimited)
+ctrl + y                                        paste
+ctrl + xe                                       continue editing command in editor
+
+fg                                              *fg* brings back program to the foreground
+clear                                           *clear* terminal
+reset                                           *reset* terminal
+column                                          formats input into colummns making it easier to read
+cd <directory>                                  *cd* changes directory, can use relative path or full path
+    cd -                                        goes to previous directory
+    cd ~                                        goes to home directory
+pushd <directory>                               *pushd* pushes current directory to a stack and changes directory
+popd                                            *popd* pops stack and returns to last directory placed by pushd
+echo "VAR is equal to $VAR"                     *echo* 
     -e allows escape characters
     echo -e '\033[1;37mWHITE'
     echo -e '\033[0;30mBLACK'
@@ -84,3 +105,4 @@ sed                                             *sed*
 ln <file_to_link> <link>                        create hard *link*, -s for *symbolic* link *ln*
 find <path> -name *.c -exec <command> {} \;     *find*
 watch <command>                                 *watch* -d highlights differences -n is interval in seconds
+<command> & disown                              *disown* runs comamnd in the background allowing to use the terminal at the same time
