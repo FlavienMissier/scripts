@@ -2,7 +2,18 @@
 *String*
 let mut s = String::new();                      *let* *mut* *string* create a new mutable variable initialized to an empty string
 let mut s = String::from("hello");
-s.push_str(", world!"); // push_str() appends a literal to a String
+s.push_str(", world");              // push_str() appends a string slice to a String
+s.push('!');                        // push appends a character
+
+*concatenation*
+let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
+let s = format!("{}-{}-{}", s1, s2, s3);
+
+*iterate* through strings
+for c in s.chars() {
+    println!("{}", c);
+}
+
 
 let s1 = String::from("hello");
 let s2 = s1;                                    *move* with strings s1 is no longer valid and s2 is instead used to reference the variable;
@@ -182,4 +193,9 @@ v.get(2);                           // returns an Option<&T> which will be none 
 for i in &mut v {
     *i += 5;
 }
+
+*hash map*
+use std::collections::HashMap;
+let mut map = HashMap::new();
+map.insert(String::from("Blue"), 10);
 
