@@ -106,3 +106,10 @@ ln <file_to_link> <link>                        create hard *link*, -s for *symb
 find <path> -name *.c -exec <command> {} \;     *find*
 watch <command>                                 *watch* -d highlights differences -n is interval in seconds
 <command> & disown                              *disown* runs comamnd in the background allowing to use the terminal at the same time
+ping <ip-address>       *ping*
+ -a 
+ -s <size (bytes)>      packet size
+ -i <interval>          interval
+ -c <num>               count
+ -w <time>              time limit
+ -D                     add timestamp
