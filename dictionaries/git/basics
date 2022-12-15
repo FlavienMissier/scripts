@@ -1,23 +1,37 @@
 *basics* *branch* *commit* *push* *checkout*
-git add .                       *add* changes to the next commit, stages changes
+git init                        *create* repository
+git clone <URL>                 *clone* repository
+git add <file>                  *add* file to the next commit, stages file
+git add .                       *add* all changes to the next commit, stages changes
 git commit -m ""                creates a commit with the current staged changes
-git push [-f]                   push local changes to remote
-git checkout <branch/commit>    change current branch to a branch or commit
-git branch                      list branches
-git branch <name>               *create* a new branch
-git push -u origin branchname
+    git commit --ammend         *ammend* changes to last commit
+git push [-f] [<remote>]        push local changes to remote. use -f to force
+git checkout <branch/commit>    change current branch to a branch or commit. -b creates the branch and switches to it
+git branch                      list branches, -r for remote branches
+git branch <name>               *create* a new branch. -d *delete* a branch
+git push -u <origin> <branchname>
 git merge <branch/commit>       *merge* changes from commit or branch into current branch
+git fetch [<remote>]            *Updates all history from remote*
+git set-upstream
 git rebase <branch/commit>      *rebase* the branch history to include the changes from the 
+git rebase -i HEAD~2            *squash* 2 commits from HEAD. In the interactive rebase change pick to squash or another command
+git cherry-pick <commit>        *cherry-pick* changes from commit to bring to current branch
 git restore <path/file>         *removes* non-commited changes. *restore*
 git stash                       *stash* changes -u stashes untracked changes
-	git stash list 		list stashes
-	git stash show		show latest stash changes
+    git stash pop               *pop* stash
+    git stash drop [<stash>]    drops default last stash or specific stash
+	git stash list 		        list stashes
+	git stash show		        show latest stash changes
 git log --graph                 *list* commits *log*, --graph shows a *graph*
-git diff <commit/branch>        *diff* shows differences
+git log --follow <file>         version *history* for a file
+git diff <commit/branch>        *diff* shows differences. By default it will show *unstaged* changes
+    git diff --cached [<commit>]    view staged changes vs latest commit
     git diff --no-index --color-words --unified=0 Chapter2.txt EditedChapter2.txt
     Uing diff for files instead of git commits, --unified number of context lines
 git status                      *status* Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git (and are not ignored by gitignore). The first are what you would commit by running git commit; the second and third are what you could commit by running git add before running git commit.
+git show <commit>               *show* changes and data for commit
 
 git revert <commit>             *revert* a commit by creating changes that revert that commit
 git reset                       *reset* a branch to a previous commit, this changes the commit history
     git reset --hard            *hard* reset to HEAD, removes all staged and unstaged changes?
+    git reset --soft HEAD^      *soft* undo the last commit leaving its changes in the workspace add more '^' to undo more commits

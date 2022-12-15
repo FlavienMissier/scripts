@@ -12,7 +12,7 @@ P           (put) paste before (paste above when pasting lines) *P*
 r           replace one character *r* *replace* 
 x           delete character *x* *delete* *character* *char*
 X           delete previous character *X* *previous*
-s           delete charact6er and go into insert mode
+s           delete character and go into insert mode
 S           delete line and go into insert mode
 >           indent *>* *indent*
 >>          indent line *>>* *line*
