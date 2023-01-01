@@ -1,0 +1,18 @@
+*pacman* *basics*
+-S <package>            *install*
+-R <package>            *remove*
+-Rs <package>           *remove* package and its unique dependencies
+-Q                      *list* installed packages
+-Qs <string1> <string2> *search* installed packages (supports regular expressions)
+-Qi <package>           diplay more information about a package
+-Ss <string1> <string2> *search* sync database packages
+-Si <package>           diplay more information about a package
+-Qe                     list explicitly installed packages
+-Qn <group>             list packages in a group
+-Qm                     list foreign packages (not installed from the official repositories)
+-Syu                    *update* all packages and synchronizes the repository databases
+-Qdt                    list packages no longer required as dependencies
+-Qet                    list packages explicitely installed and no longer required as dependencies
+Never run pacman -Sy always run -Syu instead
+When getting issues installing try updating the system first
+Use yay -Syu to also update the AUR packages
