@@ -29,9 +29,12 @@ git diff <commit/branch>        *diff* shows differences. By default it will sho
     git diff --no-index --color-words --unified=0 Chapter2.txt EditedChapter2.txt
     Uing diff for files instead of git commits, --unified number of context lines
 git status                      *status* Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git (and are not ignored by gitignore). The first are what you would commit by running git commit; the second and third are what you could commit by running git add before running git commit.
-git show <commit>               *show* changes and data for commit
+git blame <file>		*blame* shows file change dates and authors for a file
+git show <commit> : <file>      *show* changes and data for commit
 
 git revert <commit>             *revert* a commit by creating changes that revert that commit
 git reset                       *reset* a branch to a previous commit, this changes the commit history
+    git reset <file>		*unstage* a file while keeping the changes
     git reset --hard            *hard* reset to HEAD, removes all staged and unstaged changes?
     git reset --soft HEAD^      *soft* undo the last commit leaving its changes in the workspace add more '^' to undo more commits
+git tag				*tag* current commit
