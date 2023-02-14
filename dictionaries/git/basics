@@ -23,6 +23,8 @@ git stash                       *stash* changes -u stashes untracked changes
 	git stash list 		        list stashes
 	git stash show		        show latest stash changes
 git log --graph                 *list* commits *log*, --graph shows a *graph*
+git log --oneline --graph --decorate --all
+git log --author=<pattern>
 git log --follow <file>         version *history* for a file
 git diff <commit/branch>        *diff* shows differences. By default it will show *unstaged* changes
     git diff --cached [<commit>]    view staged changes vs latest commit
