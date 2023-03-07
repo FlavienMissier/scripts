@@ -1,0 +1,21 @@
+*basics*
+let stringLength (x:string) :int = x.Length  //defining parameter type in parentheses, and return type outside parentheses
+let evalWith5ThenAdd2 fn = fn 5 + 2  //function that takes in another function, signature: val evalWith5ThendAdd2 : (int -> int ) -> int
+
+let adderGenerator numberToAdd = (+) numberToAdd //having a function as an output, singature: val adderGenerator : int -> (int -> int)
+let add1 = adderGenerator 1 //using the revious function, signature: val add1 : (int -> int)
+
+() is the only value of type unit (used when no return value is required)
+let printHelloFn () = printf "hello world" //function with no return value to call this function the following syntax is used: printHelloFn ()
+
+do (1+1 |> ignore) //ignore takes anything and returns the unit type
+
+let onAStick x = x.ToString() + " on a stick" //all objects can use to string
+signature: val onAStick : 'a -> string //'a is a generic type the apostrophe is what makes it generic
+
+string list       // List type  e.g. ["a";"b";"c"]
+seq<int>          // Seq type   e.g. seq{1..10}
+int []            // Array type e.g. [|1;2;3|]
+
+
+.map() performs an action on all items that are not none
