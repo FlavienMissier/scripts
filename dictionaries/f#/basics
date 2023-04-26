@@ -17,5 +17,18 @@ string list       // List type  e.g. ["a";"b";"c"]
 seq<int>          // Seq type   e.g. seq{1..10}
 int []            // Array type e.g. [|1;2;3|]
 
+//Currying is a way to pass multiple parameters to a function. This is necessary since mathematical functions only have one parameter
+//normal version
+let printTwoParameters x y =
+   printfn "x=%i y=%i" x y
 
-.map() performs an action on all items that are not none
+//explicitly curried version
+let printTwoParameters x  =    // only one parameter!
+   let subFunction y =
+      printfn "x=%i y=%i" x y  // new function with one param
+   subFunction                 // return the subfunction
+// val printTwoParameters : int -> (int -> unit)
+
+
+
+Option.map() performs an action on all items that are not none
