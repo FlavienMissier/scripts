@@ -26,6 +26,8 @@ git log --graph                 *list* commits *log*, --graph shows a *graph*
 git log --oneline --graph --decorate --all
 git log --author=<pattern>
 git log --follow <file>         version *history* for a file
+git log -p                     shows *difference* between commits
+git log --pretty=format:"%s"   custom *format* %an = author name, %ad = author date, %ar = relative author date, %s = subject
 git diff <commit/branch>        *diff* shows differences. By default it will show *unstaged* changes
     git diff --cached [<commit>]    view staged changes vs latest commit
     git diff --no-index --color-words --unified=0 Chapter2.txt EditedChapter2.txt
