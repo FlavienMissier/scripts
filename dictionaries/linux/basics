@@ -4,10 +4,11 @@ tar -xf archive.tar.gz
 *-x* *--extract*    extract file
 *-f*                file to use
 unzip <file.zip>
+unrar <file.rar>
 
 export PATH=$PATH:/home/folder/        append to *path*
 
 chmod +x file                          Adds execute permission to file *chmod*
 
 *install* .tar.gz package
-extract package then place in /opt finnaly create a symbolic link to the executable in /usr/local/bin which is the standard for user installed apps make sure that it is on PATH and that the executable is has execute permissions
+extract package then place in /opt finnaly create a symbolic link to the executable in /usr/local/bin which is the standard for user installed apps make sure that it is on PATH and that the executable has execute permissions
