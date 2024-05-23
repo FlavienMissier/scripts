@@ -36,3 +36,4 @@ m{a-zA-Z0-9.%#:-"}  set mark at cursor, capital marks work accross fiels *m* *ma
 ''          go to last jump location *''*
 ctrl-o      go to cursor location before last jump *o* *ctrl-o*
 ctrl-i      go to cursor location after last jump *i* *ctrl-i*
+o	    go to other side of selected text when in *visual* mode *o*
