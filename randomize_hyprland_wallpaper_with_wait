@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# This script doesn't work on hyperland startup if this isn't added
+sleep 1
+
+WALLPAPER_DIR="$HOME/Pictures/wallpapers/"
+
+# Get a random wallpaper
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+
+# Apply the selected wallpaper
+hyprctl hyprpaper reload ,"$WALLPAPER"

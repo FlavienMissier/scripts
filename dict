@@ -1,17 +1,17 @@
 #!/bin/bash
 if [ $# -lt 1 -o $# -gt 2 ]; then
-    OPTIONS=`ls ~/scripts/dictionaries/`
+    OPTIONS=`ls ~/projects/scripts/dictionaries/`
     echo -e "usage: $0\n$OPTIONS\n[keywords]"
     exit 0
 fi
 
 if [ $# -eq 1 ]; then
-    cat ~/scripts/dictionaries/$1/basics | less
+    cat ~/projects/scripts/dictionaries/$1/basics | less
     exit 0
 fi
 
 if [ $# -eq 2 ]; then
     # -h removes filenames from output, -A selects number of lines to include as context in output
-    grep -h -A 20 \*$2\* ~/scripts/dictionaries/$1/* | less
+    grep -h -A 50 \*$2\* ~/projects/scripts/dictionaries/$1/* | less
 fi
 
