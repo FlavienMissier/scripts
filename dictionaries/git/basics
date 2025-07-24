@@ -2,7 +2,8 @@
 git init                        *create* repository
 git clone <URL>                 *clone* repository
 git add <file>                  *add* file to the next commit, stages file
-git add .                       *add* all changes to the next commit, stages changes
+git add .                       *add* all changes to the next commit, *stage* changes
+git rm <file>                   *rm* *removes* files from the next commit, *unstage* changes
 git commit -m ""                creates a commit with the current staged changes
     git commit --ammend         *ammend* changes to last commit
 git push [-f] [<remote>]        push local changes to remote. use -f to force
