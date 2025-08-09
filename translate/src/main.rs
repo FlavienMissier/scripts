@@ -34,14 +34,46 @@ struct Entry {
 //TODO: Add example field for Vocabulary
 //TODO: Make a quiz/random word mode
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let mut category: String = String::new();
+    let mut keyword: String = String::new();
+    let mut colors: bool = true;
+
+    let mut arg_counter: u8 = 0;
+    let mut args = env::args();
+    args.next();
+    for mut argument in args{
+        if argument.starts_with("--"){
+            argument.drain(..2);
+            match argument.as_str() {
+                "no-colors" => {
+                    colors = false;
+                }
+                _ => {
+                    print!("Invalid argument: {0}", argument);
+                    return;
+                }
+            }
+        } else {
+            match arg_counter {
+                0 => category = argument,
+                1 => keyword = argument,
+                _ => {
+                    print!("Argument count exceeds maximum");
+                    return;
+                }
+            }
+            arg_counter+=1;
+        }
+    }
+    if category.is_empty() || keyword.is_empty() {
+        print!("Missing argument\nUsage: dict <category> <keyword>");
+        return;
+    }
     //TODO: make ~ work and use it to make location more universal
     // let home_path  = env::home_dir().map(|p| {p.to_str()}).unwrap().unwrap();
     let home_path = "/home/flavius/".to_owned();
     let dictionaries_location: String = home_path + "projects/scripts/dictionaries/";
-    let category: &str = args.get(1).expect("Missing argument\nUsage: dict <category> <keyword>").trim();
-    let keyword: &str = args.get(2).expect("Missing argument\nUsage: dict <category> <keyword>").trim();
-    let dictionary = dictionaries_location + category;
+    let dictionary = dictionaries_location + &category;
     let mut file = File::open(dictionary).unwrap_or_else(|error|{
         panic!("Unable to open dictionary:\n{error}");
     });
@@ -53,34 +85,50 @@ fn main() {
         v.french == keyword || v.english == keyword || v.spanish == keyword
     });
 
+    let mut white = "";
+    let mut green = "";
+    let mut blue = "";
+    let mut yellow = "";
+    let mut red = "";
+    let mut gray = "";
+    let mut bold = "";
+    if colors {
+        white = "\x1b[0m";
+        green = "\x1b[92m";
+        blue = "\x1b[94m";
+        yellow = "\x1b[93m";
+        red = "\x1b[91m";
+        gray = "\x1b[90m";
+        bold = "\x1b[97m";
+    }
     match entry {
         Some(e) => {
             if !e.spanish.is_empty() {
-                println!("\x1b[93m{0}\x1b[0m", e.spanish);
+                println!("{1}{0}{2}", e.spanish, yellow, white);
             }
             if !e.english.is_empty() {
-                println!("\x1b[92m{0}\x1b[0m", e.english);
+                println!("{1}{0}{2}", e.english, green, white);
             }
             if !e.french.is_empty() {
-                println!("\x1b[94m{0}\x1b[0m", e.french);
+                println!("{1}{0}{2}", e.french, blue, white);
             }
             if !e.definition.is_empty() {
-                println!("Definition: {0}\x1b[0m", e.definition);
+                println!("Definition: {0}", e.definition);
             }
             if !e.word_type.is_empty() {
-                println!("\x1b[90mType: {0}\x1b[0m", e.word_type);
+                println!("{1}Type: {0}{2}", e.word_type, gray, white);
             }
             if !e.notes.is_empty() {
-                println!("\x1b[97mNotes: {0}\x1b[0m", e.notes);
+                println!("{1}Notes: {0}{2}", e.notes, bold, white);
             }
             if !e.irregularities.is_empty() {
-                println!("\x1b[91mIrregularities:\x1b[0m {0}", e.irregularities);
+                println!("{1}Irregularities:{2} {0}", e.irregularities, red, white);
             }
             if !e.related.is_empty() {
-                println!("Related: {0}\x1b[0m", e.related);
+                println!("Related: {0}", e.related);
             }
             if !e.category.is_empty() {
-                println!("\x1b[90mCategory: {0}\x1b[0m", e.category);
+                println!("{1}Category: {0}\x1b[0m", e.category, gray);
             }
 
         }
