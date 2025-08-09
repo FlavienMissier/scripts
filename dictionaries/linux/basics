@@ -12,3 +12,6 @@ chmod +x file                          Adds execute permission to file *chmod*
 
 *install* .tar.gz package
 extract package then place in /opt finnaly create a symbolic link to the executable in /usr/local/bin which is the standard for user installed apps make sure that it is on PATH and that the executable has execute permissions
+
+echo "output" |	wl-clipboard					 *pipe* *copy* to *clipboard* using *wl-clipboard*
+wl-paste															 *paste* from *clipboard* using *wl-paste*
