@@ -2,6 +2,7 @@ use serde::{Serialize, Deserialize};
 use std::fs::File;
 use std::io::Read;
 use std::env;
+use rand::prelude::*;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Dictionary {
@@ -32,11 +33,14 @@ struct Entry {
 }
 //TODO: Add options to output only certain fields so it can be easily piped to clipboard
 //TODO: Add example field for Vocabulary
-//TODO: Make a quiz/random word mode
+//TODO: Allow multiple entries to be returned if multiple are matching?
+//TODO: Add --list to list all possibilities for category and keyword
 fn main() {
     let mut category: String = String::new();
     let mut keyword: String = String::new();
     let mut colors: bool = true;
+    let mut random: bool = false;
+    let mut list: bool = false;
 
     let mut arg_counter: u8 = 0;
     let mut args = env::args();
@@ -45,6 +49,21 @@ fn main() {
         if argument.starts_with("--"){
             argument.drain(..2);
             match argument.as_str() {
+                "help" => {
+                    print!("General usage: dict <category> <keyword>\n\
+                        Options:\n\
+                            \t--help          show this menu\n\
+                            \t--no-colors     print output text without colors\n\
+                            \t--list          list all categories, if given a category list keywords for that category\n\
+                            \t--random        show a random entry for a given category");
+                    return;
+                }
+                "list" => {
+                    list = true;
+                }
+                "random" => {
+                    random = true;
+                }
                 "no-colors" => {
                     colors = false;
                 }
@@ -65,7 +84,7 @@ fn main() {
             arg_counter+=1;
         }
     }
-    if category.is_empty() || keyword.is_empty() {
+    if (category.is_empty() || keyword.is_empty()) && !random {
         print!("Missing argument\nUsage: dict <category> <keyword>");
         return;
     }
@@ -79,11 +98,18 @@ fn main() {
     });
     let mut data = String::new();
     file.read_to_string(&mut data).unwrap();
-    let dictionary_data:Dictionary = serde_json::from_str::<Dictionary>(&data).expect("JSON was not well-formatted");
+    let dictionary_data:Dictionary = serde_json::from_str::<Dictionary>(&data).expect("JSON not well-formatted");
 
-    let entry = dictionary_data.entries.iter().find(|&v| {
-        v.french == keyword || v.english == keyword || v.spanish == keyword
-    });
+    let entry: Option<&Vocabulary>;
+    if random {
+        let mut rng = rand::rng();
+        let random_index = rng.random_range(0..dictionary_data.entries.len());
+        entry = dictionary_data.entries.get(random_index);
+    } else {
+        entry = dictionary_data.entries.iter().find(|&v| {
+            v.french == keyword || v.english == keyword || v.spanish == keyword
+        });
+    }
 
     let mut white = "";
     let mut green = "";
@@ -130,7 +156,6 @@ fn main() {
             if !e.category.is_empty() {
                 println!("{1}Category: {0}\x1b[0m", e.category, gray);
             }
-
         }
         None => println!("No entry found matching keywords")
     }
