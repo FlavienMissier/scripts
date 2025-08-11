@@ -88,10 +88,8 @@ fn main() {
         print!("Missing argument\nUsage: dict <category> <keyword>");
         return;
     }
-    //TODO: make ~ work and use it to make location more universal
-    // let home_path  = env::home_dir().map(|p| {p.to_str()}).unwrap().unwrap();
-    let home_path = "/home/flavius/".to_owned();
-    let dictionaries_location: String = home_path + "projects/scripts/dictionaries/";
+    let home_path  = env::home_dir().unwrap().to_str().unwrap().to_owned();
+    let dictionaries_location: String = home_path + "/projects/scripts/dictionaries/";
     let dictionary = dictionaries_location + &category;
     let mut file = File::open(dictionary).unwrap_or_else(|error|{
         panic!("Unable to open dictionary:\n{error}");
