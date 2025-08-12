@@ -1,0 +1,282 @@
+{
+  "entries": [
+    {
+      "Entry": "git init",
+      "Definition": "create a repository",
+      "Example": "",
+      "Notes": "",
+      "Related": "git checkout",
+      "keywords": ["create", "init", "initialize", "new"],
+      "Category": ""
+    },
+    {
+      "Entry": "git clone <URL>",
+      "Definition": "clone repository",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["clone"],
+      "Category": ""
+    },
+    {
+      "Entry": "git add <file>",
+      "Definition": "add file to the next commit",
+      "Example": "",
+      "Notes": "use 'git add .' to add all changes in currrent dir to the next commit",
+      "Related": "",
+      "keywords": ["add", "stage"],
+      "Category": ""
+    },
+    {
+      "Entry": "git rm <file>",
+      "Definition": "removes files from the next commit",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["rm", "remove", "unstage"],
+      "Category": ""
+    },
+    {
+      "Entry": "git commit [-m \"\"]",
+      "Definition": "*creates a commit with the current staged changes",
+      "Example": "",
+      "Notes": "use 'git commit --ammend' to ammend changes to the last commit",
+      "Related": "",
+      "keywords": ["commit", "ammend"],
+      "Category": ""
+    },
+    {
+      "Entry": "git push [<remote>]",
+      "Definition": "*push local changes to remote",
+      "Example": "",
+      "Notes": "use -f to force",
+      "Related": "",
+      "keywords": ["push", "force"],
+      "Category": ""
+    },
+    {
+      "Entry": "git checkout <branch/commit>",
+      "Definition": "change current branch to a branch or commit",
+      "Example": "",
+      "Notes": "-b creates the branch and switches to it",
+      "Related": "git branch",
+      "keywords": ["checkout", "switch", "create"],
+      "Category": ""
+    },
+    {
+      "Entry": "git branch [<name>]",
+      "Definition": "list branches",
+      "Example": "",
+      "Notes": "-r for remote branches, provide name to create a branch and pass -d to delete it",
+      "Related": "git checkout",
+      "keywords": ["branch", "branches", "list", "delete", "create"],
+      "Category": ""
+    },
+    {
+      "Entry": "git push [-u <origin>] [<branchname>]",
+      "Definition": "push current branch to origin",
+      "Example": "",
+      "Notes": "-u to set upstream",
+      "Related": "",
+      "keywords": ["push"],
+      "Category": ""
+    },
+    {
+      "Entry": "git merge <branch/commit>",
+      "Definition": "merge changes from commit or branch into current branch",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["merge"],
+      "Category": ""
+    },
+    {
+      "Entry": "git fetch [<remote>]",
+      "Definition": "*Updates all history from remote*",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["fetch"],
+      "Category": ""
+    },
+    {
+      "Entry": "git set-upstream",
+      "Definition": "set upstream origin",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["origin", "set-upstream"],
+      "Category": ""
+    },
+    {
+      "Entry": "git rebase [<branch>]",
+      "Definition": "rebase the branch history to add the changes from the current branch on top of changes from upstream",
+      "Example": "",
+      "Notes": "-i for interactive",
+      "Related": "squash",
+      "keywords": ["rebase"],
+      "Category": ""
+    },
+    {
+      "Entry": "git rebase -i HEAD~2",
+      "Definition": "squash 2 commits from HEAD. In the interactive rebase change pick to squash or another command",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["squash", "rebase"],
+      "Category": ""
+    },
+    {
+      "Entry": "git cherry-pick <commit>",
+      "Definition": "cherry-pick changes from commit to bring to current branch",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["cherry-pick", "cherrypick"],
+      "Category": ""
+    },
+    {
+      "Entry": "git restore <path/file>",
+      "Definition": "removes non-commited changes",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["restore", "reset"],
+      "Category": ""
+    },
+    {
+      "Entry": "git stash",
+      "Definition": "stash changes",
+      "Example": "",
+      "Notes": "-u stashes untracked changes",
+      "Related": "git stash [pop | drop | list | show]",
+      "keywords": ["stash"],
+      "Category": ""
+    },
+    {
+      "Entry": "git stash pop",
+      "Definition": "pop stash",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["pop", "stash"],
+      "Category": ""
+    },
+    {
+      "Entry": "git stash drop [<stash>]",
+      "Definition": "*drops default last stash or specific stash",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["drop","stash"],
+      "Category": ""
+    },
+    {
+      "Entry": "git stash list",
+      "Definition": "list stashes",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["list", "stash"],
+      "Category": ""
+    },
+    {
+      "Entry": "git stash show",
+      "Definition": "show latest stash changes",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["show", "stash"],
+      "Category": ""
+    },
+    {
+      "Entry": "git log [--graph]",
+      "Definition": "list commits log",
+      "Example": "git log --oneline --graph --decorate --all\ngit log --author=<pattern>\ngit log --follow <file>         version history for a file\n git log -p                     shows difference between commits\n git log --pretty=format:\"%s\"   custom format %an = author name, %ad = author date, %ar = relative author date, %s = subject\n",
+      "Notes": "--graph shows a graph",
+      "Related": "",
+      "keywords": ["log", "graph", "list", "history", "track", "custom", "format", "difference"],
+      "Category": ""
+    },
+    {
+      "Entry": "git diff <commit/branch>",
+      "Definition": "diff shows differences. By default it will show unstaged changes",
+      "Example": "git diff --cached [<commit>]    view staged changes vs latest commit\ngit diff --no-index --color-words --unified=0 file1 file2  Using diff for files instead of git commits, --unified number of context lines",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["diff", "difference", "staged", "unstaged", "files", "no-index", "unified", "cached"],
+      "Category": ""
+    },
+    {
+      "Entry": "git status",
+      "Definition": "displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git (and are not ignored by gitignore). The first are what you would commit by running git commit; the second and third are what you could commit by running git add before running git commit",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["status"],
+      "Category": ""
+    },
+    {
+      "Entry": "git blame <file>",
+      "Definition": "shows file change dates and authors for a file",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["blame", "track", "history"],
+      "Category": ""
+    },
+    {
+      "Entry": "git show <commit> : <file>",
+      "Definition": "show changes and data for commit",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["show"],
+      "Category": ""
+    },
+    {
+      "Entry": "git revert <commit>",
+      "Definition": "revert a commit by creating changes that revert that commit",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["revert"],
+      "Category": ""
+    },
+    {
+      "Entry": "git reset",
+      "Definition": "*reset* a branch to a previous commit, this changes the commit history",
+      "Example": " git reset <file>		unstage a file while keeping the changes\ngit reset --hard            hard reset to HEAD, removes all staged and unstaged changes?\ngit reset --soft HEAD^      soft undo the last commit leaving its changes in the workspace add more '^' to undo more commits",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["unstage", "reset", "soft", "hard"],
+      "Category": ""
+    },
+    {
+      "Entry": "git tag",
+      "Definition": "tag current commit",
+      "Example": "",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["tag"],
+      "Category": ""
+    },
+    {
+      "Entry": "gitignore",
+      "Definition": "file that allows choosing changes to be ignored",
+      "Example": ".o         any file ending in .o\nreadme.*    any file named readme with any extension\n/test/*     everything in the test folder",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["gitignore"],
+      "Category": ""
+    },
+    {
+      "Entry": "git config",
+      "Definition": "git setup",
+      "Example": "git config --global user.name \"\" git config --global user.email \"\"\n git config --global core.editor vim\n git config --global init.defaultBranch main\n git config pull.rebase false\n ssh-keygen -t ed25519 -C \"\"\n eval \"$(ssh-agent -s)\"\n ssh-add ~/.ssh/id_ed25519\n cat ~/.ssh/id_ed25519.pub\n# copy the public key and go to hhtps://github.com/settings/ssh/new",
+      "Notes": "",
+      "Related": "",
+      "keywords": ["setup", "config", "key"],
+      "Category": ""
+    }
+}

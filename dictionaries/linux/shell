@@ -113,3 +113,8 @@ ping <ip-address>       *ping*
  -c <num>               count
  -w <time>              time limit
  -D                     add timestamp
+
+operators
+<
+>
+>>

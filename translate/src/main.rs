@@ -35,6 +35,8 @@ struct Entry {
 //TODO: Add example field for Vocabulary
 //TODO: Allow multiple entries to be returned if multiple are matching?
 //TODO: Add --list to list all possibilities for category and keyword
+//TODO: Figure out multiline examples and notes
+//TODO: Figure out multiple entries with same keyword
 fn main() {
     let mut category: String = String::new();
     let mut keyword: String = String::new();
