@@ -90,7 +90,8 @@ fn main() {
         print!("Missing argument\nUsage: dict <category> <keyword>");
         return;
     }
-    let home_path  = env::home_dir().unwrap().to_str().unwrap().to_owned();
+    // let home_path = env::home_dir().and_then(|x| x.to_str()).unwrap().to_owned();
+    let home_path = env::home_dir().map(|x| x.to_string_lossy().to_string()).unwrap();
     let dictionaries_location: String = home_path + "/projects/scripts/dictionaries/";
     let dictionary = dictionaries_location + &category;
     let mut file = File::open(dictionary).unwrap_or_else(|error|{
